@@ -2,11 +2,11 @@ package misql;
 
 import java.util.HashMap;
 
-public class Nodo {
+public class Node {
 
     private HashMap<String, String> myNodo;
 
-    public Nodo() {
+    public Node() {
         this.myNodo = new HashMap<>();
     }
 
