@@ -4,17 +4,21 @@ import java.util.HashMap;
 
 public class Node {
 
-    private HashMap<String, String> myNodo;
+    private HashMap<String, String> node;
 
     public Node() {
-        this.myNodo = new HashMap<>();
+        this.node = new HashMap<>();
     }
 
-    public void insertarFila(String llave, String valor){
-        myNodo.put(llave, valor);
+    public void insert(String key, String value){
+        node.put(key, value);
     }
 
+    /**
+     * Serializes current node to one straight line.
+     * @return a String with the serialized node.
+     */
     public String oneLine(){
-        return myNodo.toString();
+        return node.toString();
     }
 }
