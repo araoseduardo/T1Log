@@ -26,7 +26,6 @@ public class NodeGenerator {
      * @return an ArrayList<Node> with the generated product-nodes.
      */
     public ArrayList<Node> generateProductNodes(int size) {
-        System.out.println(size);
         // Note: the id will be generated with incremental numbers so it does not contain duplicated
         // ids, but the list will be returned shuffled.
 
