@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 /**
  * This class will be used for experimental purposes, to generate random input data.
@@ -22,20 +23,28 @@ public class NodeGenerator {
     public ArrayList<Node> generateProductNodesArray(int size) {
         // Note: the id will be generated with incremental numbers so it does not contain duplicated
         // ids, but the list will be returned shuffled.
+        Random random = new Random();
 
         ArrayList<Node> nodes = new ArrayList<>();
         for (int i=1; i <= size; i++)
-            nodes.add(ProductNode.randomProductNode(i));
+            nodes.add(ProductNode.randomProductNode(i, random));
 
         Collections.shuffle(nodes);
         return nodes;
     }
 
     public void generateProductNodesToFile(int size, String fileName) throws IOException {
+        Random random = new Random();
+
         BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
 
+        ArrayList<Integer> ids = new ArrayList<>(); // Array with shuffled ids
         for (int i=1; i <= size; i++)
-            writer.append(ProductNode.randomProductNode(i).oneLine()+"\n");
+            ids.add(i);
+        Collections.shuffle(ids);
+
+        for (int id : ids)
+            writer.append(ProductNode.randomProductNode(id, random).oneLine()+"\n");
 
         writer.close();
     }

@@ -54,7 +54,7 @@ public class TextFile extends AbstractDatabase {
 			ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
 			objectOut.writeObject(n.oneLine());
 			objectOut.close();
-			System.out.println("¡Nodo agregado exitosamente!");
+			System.out.println("Â¡Nodo agregado exitosamente!");
 		}
 		
 		catch(Exception ex)
