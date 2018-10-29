@@ -18,9 +18,28 @@ public class Main {
         System.out.println("\nThe nodes were saved to file '" + fileName + "' .\n");
         //Util.printArrayList(randomProducts);
     }
-
+    
+    // un test a mano pa cachar si funcionan algunas cosas
+    private static void InsertNode() throws IOException{
+    	 String FileName = "data/input/random_product_nodes.txt";
+    	 Node hele = new Node();
+    	 TextFile archivo = new TextFile(FileName);
+    	 hele.insert("id", "13");
+    	 hele.insert("precio", "3214");
+    	 hele.insert("puntosNec", "234");
+    	 hele.insert("puntosRec", "876");
+    	 System.out.println(hele.Serialize());
+    	 archivo.Insert(hele);
+    	
+    }
+    
+    // diego aqui cambie la funcion a testear nomas xD
     public static void main(String[] args) throws IOException {
         /* Testing of random generation of nodes of type Product */
-        productNodes();
+    	productNodes();
+        InsertNode();
+        
+        
+        
     }
 }

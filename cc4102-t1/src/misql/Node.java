@@ -1,13 +1,11 @@
 package misql;
-import java.io.Serializable;
 
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class Node implements Serializable {
+public class Node {
 
     private HashMap<String, String> node;
-    private static final long serialVersionUID = 1L;
 
 
     public Node() {
@@ -24,9 +22,29 @@ public class Node implements Serializable {
      */
     public String oneLine(){
         return node.toString();
+        
+    }
+    
+    /**
+     * @author EduardoAraos
+     * Serializa el nodo a un string de la forma:
+     * "<id>,<precio>,<puntosNec>,<puntosRec>"
+     * @return un String de la forma señalada
+     */
+    public String Serialize() 
+    {
+    	StringBuffer stringBuffer = new StringBuffer();
+    	stringBuffer.append(this.node.get("id")).append(',');
+    	stringBuffer.append(this.node.get("precio")).append(',');
+    	stringBuffer.append(this.node.get("puntosNec")).append(',');
+    	stringBuffer.append(this.node.get("puntosRec"));
+    	return stringBuffer.toString();
+    	
     }
     
     @Override
+    // No pude overridearlo y igual no usaremos esto
+    // NO PESCAR!!!!
     public String toString() 
     {
     	StringBuffer stringBuffer = new StringBuffer();

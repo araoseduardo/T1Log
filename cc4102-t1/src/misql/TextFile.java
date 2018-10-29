@@ -1,7 +1,6 @@
 package misql;
 import java.util.ArrayList;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import utilities.Util;
 
 /**
  * @author Eduardo Araos 
@@ -11,6 +10,7 @@ import java.io.ObjectOutputStream;
 public class TextFile extends AbstractDatabase {
 	
 	// Nuestra lista de nodos
+	// **** A PRIORI NO ES NECESARIA **** HAY QUE DEPRECARLA ****D****
 	private ArrayList<Node> NodeList;
 	private String FilePath;
 	
@@ -21,6 +21,8 @@ public class TextFile extends AbstractDatabase {
 	}
 	
 	// Insertar un nodo en nuestra Lista 
+	// y agregarlo a nuestro archivo de texto
+	//****D****
 	@Override
 	public void Insert(Node n) 
 	{	
@@ -30,6 +32,7 @@ public class TextFile extends AbstractDatabase {
 	}
 	
 	// Insertar una lista de nodos en nuestra lista
+	// ****D****
 	public void InsertByList( ArrayList<Node> ListofNodes ) 
 	{
 		for(Node n : ListofNodes) 
@@ -38,22 +41,30 @@ public class TextFile extends AbstractDatabase {
 		}
 	}
 	
-	// Algoritmo de ordenamiento MergeSort para memoria externa
+	/**
+	 * @author Eduardo Araos 
+	 * Toma un nodo, le asigna un id, y lo envia para guardarlo en el archivo
+	 * de este TextFile
+	 */
 	@Override
 	public void MergeSort(String a) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	// Escribe el nuevo nodo al archivo de texto de este textfile
+	/**
+	 * @author Eduardo Araos 
+	 * Toma un nodo, le asigna un id, y lo envia para guardarlo en el archivo
+	 * de este TextFile
+	 */
 	public void WriteObjectTofile(Node n)
 	{
 		try
 		{
-			FileOutputStream fileOut = new FileOutputStream(this.FilePath);
-			ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
-			objectOut.writeObject(n.oneLine());
-			objectOut.close();
+			int lin = Util.readFileNlines(this.FilePath);
+			int id = lin+1;
+			n.insert("id", Integer.toString(id));
+			Util.save1NodeToFile(this.FilePath, n);
 			System.out.println("¡Nodo agregado exitosamente!");
 		}
 		
