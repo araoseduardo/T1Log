@@ -1,4 +1,5 @@
 package misql;
+import java.io.*;
 /**
  * @author Eduardo Araos 
  * Clase abstracta para la base de datos de MiSQL, cada estructura
@@ -6,12 +7,6 @@ package misql;
  * la documentacion de cada metodo sera provista en las subclases.
  */
 public abstract class AbstractDatabase {
-
-
-	public void MergeSort(String a) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	public void Insert(Node n) {
 		// TODO Auto-generated method stub

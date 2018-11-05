@@ -11,6 +11,12 @@ public class Node {
     public Node() {
         this.node = new HashMap<>();
     }
+    
+    // Get method for this hashmap collection
+    public int Get(String a) {
+    	
+    	return Integer.parseInt(this.node.get(a));
+    }
 
     public void insert(String key, String value){
         node.put(key, value);
