@@ -18,7 +18,7 @@ public class Util {
 
     public static void printArrayList(ArrayList<Node> nodeList) {
         for (Node node : nodeList)
-            System.out.println(node.oneLine());
+            System.out.println(node.serialize());
     }
     // *** IMPORTANTE***
     // Diego aqui cambie el oneLine() por Serialize()
@@ -26,7 +26,7 @@ public class Util {
         BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
 
         for (Node node : nodeArray)
-            writer.append(node.Serialize()+"\n");
+            writer.append(node.serialize()+"\n");
 
         writer.close();
     }
@@ -39,7 +39,7 @@ public class Util {
     public static void save1NodeToFile(String fileName, Node node) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
         
-        writer.append(node.Serialize()+"\n");
+        writer.append(node.serialize()+"\n");
 
         writer.close();
     }

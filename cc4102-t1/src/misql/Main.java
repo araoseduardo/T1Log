@@ -3,7 +3,7 @@ package misql;
 import utilities.NodeGenerator;
 import utilities.Util;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -66,6 +66,11 @@ public class Main {
         stopTime = System.currentTimeMillis();
         secondElapsedTime = stopTime - startTime;
         System.out.println("--Elapsed time: " + secondElapsedTime + "\n");
-
+        
+        TextFile hola = new TextFile(fileName);
+        hola.MergeSort("precio");
+   
+        
+        
     }
 }
