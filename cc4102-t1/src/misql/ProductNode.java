@@ -1,5 +1,6 @@
 package misql;
 
+import java.util.HashMap;
 import java.util.Random;
 
 public class ProductNode extends Node {
@@ -14,6 +15,22 @@ public class ProductNode extends Node {
         this.insert("precio", precio);
         this.insert("puntosNec", puntosNec);
         this.insert("puntosRec", puntosRec);
+    }
+
+    /**
+     * @author EduardoAraos
+     * Serializa el nodo a un string de la forma:
+     * "<id>,<precio>,<puntosNec>,<puntosRec>"
+     * @return un String de la forma señalada
+     */
+    public String serialize() {
+        HashMap<String, String> nodeMap = this.getNodeMap();
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append(nodeMap.get("id")).append(',');
+        stringBuffer.append(nodeMap.get("precio")).append(',');
+        stringBuffer.append(nodeMap.get("puntosNec")).append(',');
+        stringBuffer.append(nodeMap.get("puntosRec"));
+        return stringBuffer.toString();
     }
 
 

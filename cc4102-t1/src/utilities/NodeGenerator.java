@@ -44,7 +44,7 @@ public class NodeGenerator {
         Collections.shuffle(ids);
 
         for (int id : ids)
-            writer.append(ProductNode.randomProductNode(id, random).oneLine()+"\n");
+            writer.append(ProductNode.randomProductNode(id, random).serialize()+"\n");
 
         writer.close();
     }
