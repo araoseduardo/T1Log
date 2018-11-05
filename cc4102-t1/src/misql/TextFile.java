@@ -45,7 +45,7 @@ public class TextFile extends AbstractDatabase {
 		}
 	}
 	
-	public void MergeSort(String a) throws IOException {
+	public void MergeSortProductNodes(String attribute) throws IOException {
 		
 		// Tamaño del bloque de memoria
 		int B = (int) Math.pow(10, 1);
@@ -92,7 +92,7 @@ public class TextFile extends AbstractDatabase {
 	          String[] splits = line.split(",");
 	          
 	          // Creo mi nuevo nodo que esta descrito en split
-	          Node NodeRead = new Node();
+	          Node NodeRead = new ProductNode();
 	          NodeRead.insert("id", splits[0]);
 	          NodeRead.insert("precio", splits[1]);
 	          NodeRead.insert("puntosNec", splits[2]);
@@ -108,7 +108,7 @@ public class TextFile extends AbstractDatabase {
 	            @Override
 	            public int compare(Node lhs, Node rhs) {
 	                // -1 - less than, 1 - greater than, 0 - equal, all inversed for descending
-	                return lhs.Get(a) < rhs.Get(a) ? -1 : (lhs.Get(a) > rhs.Get(a)) ? 1 : 0;
+	                return lhs.Get(attribute) < rhs.Get(attribute) ? -1 : (lhs.Get(attribute) > rhs.Get(attribute)) ? 1 : 0;
 	            }
 	        });
 	        

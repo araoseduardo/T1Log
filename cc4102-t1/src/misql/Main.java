@@ -68,9 +68,6 @@ public class Main {
         System.out.println("--Elapsed time: " + secondElapsedTime + "\n");
         
         TextFile hola = new TextFile(fileName);
-        hola.MergeSort("precio");
-   
-        
-        
+        hola.MergeSortProductNodes("id");
     }
 }

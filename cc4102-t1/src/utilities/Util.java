@@ -20,8 +20,7 @@ public class Util {
         for (Node node : nodeList)
             System.out.println(node.serialize());
     }
-    // *** IMPORTANTE***
-    // Diego aqui cambie el oneLine() por Serialize()
+
     public static void saveNodesToFile(String fileName, ArrayList<Node> nodeArray) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
 
